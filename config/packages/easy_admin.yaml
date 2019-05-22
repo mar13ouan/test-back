@@ -1,0 +1,49 @@
+easy_admin:
+  entities:
+    # List the entity class name you want to manage
+    Pock:
+      class: App\Entity\Pock
+      form:
+        fields:
+              -
+                  property: 'title'
+                  type: App\Form\TitleType
+              -
+                  property: 'pocket'
+                  type: App\Form\PocketType
+              -
+                  property: 'pockito'
+                  type: App\Form\PockitoType
+              - { property: "update_at", type: 'date' }
+              - { property: "lat", type: 'text' }
+              - { property: "lng", type: 'text' }
+    Pocket:
+      class: App\Entity\Pocket
+      form:
+        fields:
+          - "id"
+          - { property: "__self", type: 'easyadmin_autocomplete' }
+          - { property: "pocket", type_options: { widget: "single_text" }}
+    Pockito:
+      class: App\Entity\Pockito
+      form:
+        fields:
+          - "id"
+          - { property: "__self", type: 'easyadmin_autocomplete' }
+          - { property: "pockito", type_options: { widget: "single_text" }}
+    Title:
+      class: App\Entity\Title
+      form:
+        fields:
+          - "id"
+          - { property: "__self", type: 'easyadmin_autocomplete' }
+          - { property: "title", type_options: { widget: "single_text" }}
+    #  - App\Entity\Category
+    #  - App\Entity\User
+# easy_admin:
+#       entities:
+#         App\Entity\Pock
+#         App\Entity\Pocket
+#         App\Entity\Pockito
+#         App\Entity\Title
+
